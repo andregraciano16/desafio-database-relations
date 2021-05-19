@@ -17,10 +17,10 @@ class Customer {
   @Column()
   email: string;
 
-  @CreateDateColumn
+  @CreateDateColumn()
   created_at: Date;
 
-  @UpdateDateColumn
+  @UpdateDateColumn()
   updated_at: Date;
 }
 
