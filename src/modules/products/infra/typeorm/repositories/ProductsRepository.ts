@@ -26,7 +26,7 @@ class ProductsRepository implements IProductsRepository {
       price,
       quantity,
     });
-
+    await this.ormRepository.save(product);
     return product;
   }
 
@@ -54,7 +54,8 @@ class ProductsRepository implements IProductsRepository {
   public async updateQuantity(
     products: IUpdateProductsQuantityDTO[],
   ): Promise<Product[]> {
-    return this.ormRepository.save(products);
+    const productsUpdate = await this.ormRepository.save(products);
+    return productsUpdate;
   }
 }
 

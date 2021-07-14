@@ -2,8 +2,8 @@ import Customer from '@modules/customers/infra/typeorm/entities/Customer';
 
 interface IProduct {
   product_id: string;
-  price: number;
   quantity: number;
+  price: number;
 }
 
 export default interface ICreateOrderDTO {

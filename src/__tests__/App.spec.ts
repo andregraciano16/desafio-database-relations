@@ -1,10 +1,7 @@
 import request from 'supertest';
-
 import { Connection, getConnection, getRepository } from 'typeorm';
 import createConnection from '@shared/infra/typeorm/index';
-
 import Product from '@modules/products/infra/typeorm/entities/Product';
-
 import app from '@shared/infra/http/app';
 
 let connection: Connection;
@@ -122,7 +119,6 @@ describe('App', () => {
       name: 'Rocketseat',
       email: 'oi@rocketseat.com.br',
     });
-
     const response = await request(app)
       .post('/orders')
       .send({
